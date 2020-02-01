@@ -1,0 +1,157 @@
+doctype html(lang='en')
+head
+    title SIGNUP
+    |     
+    meta(name='keywords', content='Share secrets anonymously. Private anonymous Signup himitsu')
+    | &#x9;
+    meta(name='description', content='the signup page for himitsu website. share your secrets anonymously')
+    | &#x9;
+    meta(charset='utf-8')
+    | &#x9;
+    meta(http-equiv='X-UA-Compatible', content='IE=Edge')
+    | &#x9;
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    // stylesheet css
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    | &#x9;
+    link(rel='stylesheet', href='/stylesheets/font-awesome.min.css')
+    | &#x9;
+    link(rel='stylesheet', href='/stylesheets/nivo-lightbox.css')
+    | &#x9;
+    link(rel='stylesheet', href='/stylesheets/nivo_themes/default/default.css')
+    | &#x9;
+    link(rel='stylesheet', href='/stylesheets/templatemo-style.css')
+    // google web font css
+    link(href='http://fonts.googleapis.com/css?family=Montserrat:400,700', rel='stylesheet', type='text/css')
+    | &#x9;
+    script(src='https://kit.fontawesome.com/3d3ae9b37d.js', crossorigin='anonymous')
+    // FAVICON
+    link(rel='icon', type='image/png', sizes='32x32', href='./images/favicon-32x32.png')
+    | &#x9;
+    link(rel='icon', type='image/png', sizes='16x16', href='./images/favicon-16x16.png')
+    // STYLE
+    style.
+      /* for Login */
+      .modal-content{
+      background-color: rgba(0, 139, 139, 0.603);
+      }
+      .btn-link{
+      color:white;
+      }
+      .modal-heading h2{
+      color:#ffffff;
+      }
+  body
+    // navigation
+    .container
+      .navbar.navbar-default.navbar-static-top(role='navigation')
+        .navbar-header
+          button.navbar-toggle(data-toggle='collapse', data-target='.navbar-collapse')
+            span.icon.icon-bar
+            | &#x9;&#x9;&#x9;&#x9;
+            span.icon.icon-bar
+            | &#x9;&#x9;&#x9;&#x9;
+            span.icon.icon-bar
+          | &#x9;&#x9;&#x9;
+          a.navbar-brand(href='#')
+            img.img-responsive(style='width: 8rem;', src='images/himitsutext.png', alt='logo of himitsu')
+        | &#x9;&#x9;
+        .collapse.navbar-collapse
+          ul.nav.navbar-nav.navbar-right
+            li
+              a(href='/') HOME
+            | &#x9;&#x9;&#x9;&#x9;
+            li
+              a.active(href='/signup') SIGNUP
+            | &#x9;&#x9;&#x9;&#x9;
+            li
+              a(href='/about') ABOUT US
+            | &#x9;&#x9;&#x9;&#x9;
+            li
+              a(href='/release') RELEASE A SECRET
+            | &#x9;&#x9;&#x9;&#x9;
+            li
+              a(href='/contact') CONTACT
+    // Signup Section
+    .col-md-4
+    .col-md-4(style='margin: 5rem auto;')
+      .modal-dialog(style='width: 100%;')
+        .modal-content
+          .modal-heading
+            h2.text-center Signup
+          | &#x9;&#x9;&#x9;
+          hr
+          | &#x9;&#x9;&#x9;
+          .modal-body
+            form(action='#', role='form')
+              .form-group
+                strong USERNAME
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                .input-group
+                  span.input-group-addon
+                    span.glyphicon.glyphicon-user
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  input.form-control(type='text', placeholder='Username')
+              | &#x9;&#x9;&#x9;&#x9;&#x9;
+              .form-group
+                strong EMAIL
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                .input-group
+                  span.input-group-addon
+                    span.glyphicon.glyphicon-envelope
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  input.form-control(type='email', placeholder='Email')
+              | &#x9;&#x9;&#x9;&#x9;&#x9;
+              .form-group
+                strong PASSWORD
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                .input-group
+                  span.input-group-addon
+                    span.glyphicon.glyphicon-lock
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  input.form-control(type='password', placeholder='Password')
+              | &#x9;&#x9;&#x9;&#x9;&#x9;
+              .form-group.text-center
+                button.btn.btn-dark.btn-lg(type='submit') Signup
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                a.btn.btn-link(href='/') Already Have an Account
+    .col-md-4
+    // footer section
+    footer
+      .container
+        .row(style='position: relative;')
+          .col-md-6.col-sm-6
+            img.img-responsive(style='width: 30rem;', src='images/himitsutext.png', alt='logo')
+          | &#x9;&#x9;&#x9;
+          .col-md-6.col-sm-8
+            div(style='margin: 5rem;')
+              p
+                | Roux Studio : something about how awesome this company is
+                a(rel='nofollow', href='http://www.facebook.com/templatemo', target='_parent') Roux
+                |  website.
+                |                 something about how awesome this company is and some other stuff about our studio
+              | &#x9;&#x9;&#x9;&#x9;
+              p
+                i.fa.fa-phone
+                |  647-647-6476
+              | &#x9;&#x9;&#x9;&#x9;
+              p
+                i.fa.fa-envelope-o
+                |  rouxstudios@repistola.com
+              |               
+              p
+                i.fa.fa-globe
+                |  www.repistola.com
+    // copyright section
+    .copyright
+      .container
+        .row
+          .col-md-6.col-sm-6
+            p Copyright &copy; 2020 Roux Studios
+    // javascript js
+    script(src='/javascripts/jquery.js')
+    script(src='/javascripts/bootstrap.min.js')
+    | &#x9;
+    script(src='/javascripts/nivo-lightbox.min.js')
+    script(src='/javascripts/custom.js')
+
