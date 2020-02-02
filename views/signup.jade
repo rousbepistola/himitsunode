@@ -73,49 +73,50 @@ head
             li
               a(href='/contact') CONTACT
     // Signup Section
-    .col-md-4
-    .col-md-4(style='margin: 5rem auto;')
-      .modal-dialog(style='width: 100%;')
-        .modal-content
-          .modal-heading
-            h2.text-center Signup
-          | &#x9;&#x9;&#x9;
-          hr
-          | &#x9;&#x9;&#x9;
-          .modal-body
-            form(action='#', role='form')
-              .form-group
-                strong USERNAME
-                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                .input-group
-                  span.input-group-addon
-                    span.glyphicon.glyphicon-user
-                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                  input.form-control(type='text', placeholder='Username')
-              | &#x9;&#x9;&#x9;&#x9;&#x9;
-              .form-group
-                strong EMAIL
-                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                .input-group
-                  span.input-group-addon
-                    span.glyphicon.glyphicon-envelope
-                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                  input.form-control(type='email', placeholder='Email')
-              | &#x9;&#x9;&#x9;&#x9;&#x9;
-              .form-group
-                strong PASSWORD
-                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                .input-group
-                  span.input-group-addon
-                    span.glyphicon.glyphicon-lock
-                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                  input.form-control(type='password', placeholder='Password')
-              | &#x9;&#x9;&#x9;&#x9;&#x9;
-              .form-group.text-center
-                button.btn.btn-dark.btn-lg(type='submit') Signup
-                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                a.btn.btn-link(href='/') Already Have an Account
-    .col-md-4
+    .row
+      .col-md-4
+      .col-md-4(style='margin: 5rem auto;')
+        .modal-dialog(style='width: 100%;')
+          .modal-content
+            .modal-heading
+              h2.text-center Signup
+            | &#x9;&#x9;&#x9;
+            hr
+            | &#x9;&#x9;&#x9;
+            .modal-body
+              form(action='/release', role='form', method="post")
+                .form-group
+                  strong USERNAME
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  .input-group
+                    span.input-group-addon
+                      span.glyphicon.glyphicon-user
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    input.form-control(type='text', placeholder='Username', name='username')
+                | &#x9;&#x9;&#x9;&#x9;&#x9;
+                .form-group
+                  strong EMAIL
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  .input-group
+                    span.input-group-addon
+                      span.glyphicon.glyphicon-envelope
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    input.form-control(type='email', placeholder='Email', name='email')
+                | &#x9;&#x9;&#x9;&#x9;&#x9;
+                .form-group
+                  strong PASSWORD
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  .input-group
+                    span.input-group-addon
+                      span.glyphicon.glyphicon-lock
+                    | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                    input.form-control(type='password', placeholder='Password', name='password')
+                | &#x9;&#x9;&#x9;&#x9;&#x9;
+                .form-group.text-center
+                  button.btn.btn-dark.btn-lg(type='submit') Signup
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  a.btn.btn-link(href='/') Already Have an Account
+      .col-md-4
     // footer section
     footer
       .container
