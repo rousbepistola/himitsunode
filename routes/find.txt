@@ -1,0 +1,94 @@
+let MongoClient = require('mongodb').MongoClient;
+let url = "mongodb+srv://rousbepistola:3te5hrlns2gy@cluster0-1lsui.azure.mongodb.net/test?retryWrites=true&w=majority";
+
+
+MongoClient.connect(url, function(err, db){
+    if(err) throw err;
+    let dbo = db.db("first1");
+
+//     dbo.collection("users1").findOne({} ,function(err, data){
+//         if (err) throw err;
+//         console.log(data);
+//         db.close();
+
+
+        // MongoClient.connect(url, function(err, db){
+        //     if(err) throw err;
+        //     let dbo = db.db("first1");
+        
+        //     dbo.collection("users1").find({}).toArray(function(err, data){
+        //         if (err) throw err;
+        //         console.log(data);
+        //         db.close();
+
+
+        // MongoClient.connect(url, function(err, db){
+        //     if(err) throw err;
+        //     let dbo = db.db("first1");
+        
+        //     dbo.collection("users1").find({fname:/^J/}).toArray(function(err, data){
+        //         if (err) throw err;
+        //         console.log(data);
+        //         db.close();
+
+
+
+        // one field only
+    //     let myquery3 = {lname: "Smith"};
+    //     MongoClient.connect(url, function(err, db){
+    // if(err) throw err;
+    // let dbo = db.db("first1");
+
+    // dbo.collection("users1").findOne({} ,function(err, data){
+    //     if (err) throw err;
+    //     console.log(data.lname);
+    //     db.close();
+
+
+    // let myquery = {'lname':'Epistola'}
+    // let myquery2 = {'lname':/^/}
+    // dbo.collection("users1").find().toArray(function(err, data){
+    //         if (err) throw err;
+    //         console.log(fname);
+    //         db.close();
+
+
+    // dbo.collection.aggregate([
+    //     { 
+    //         "$project": { "_id": 0, "fname": { 
+    //             "$map": { "input": "$array", "as": "ar", "in": "$$ar.data" } } }
+    //     }
+    // ])
+
+                    // REGULAR WAY to use one field
+    dbo.collection("users1").find({}, {projection: {_id:0, fname:1}}).toArray(function(err, data){
+            if (err) throw err;
+            console.log(data);
+            db.close();
+
+                    // ANASTASIA WAY
+    // dbo.collection("users1").find({}).toArray(function(err, data){
+    //     if (err) throw err;
+
+    //     function names(user){
+    //         return user.fname;
+    //     }
+    //     var users = data.map(names);
+    //     console.log(users);
+    //     db.close();
+
+
+
+        // let myquerydelete = {fname:"/^B/"}
+//     dbo.collection("users1").deleteMany(myquerydelete, function(err, obj){
+//         if(err) throw err;
+//         console.log("deleted");
+//         db.close();
+//     });
+
+
+
+});
+});
+
+
