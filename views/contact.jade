@@ -60,6 +60,7 @@ body
                     | &#x9;&#x9;&#x9;&#x9;
                     li
                         a.active(href='/contact') CONTACT
+                    
         // contact header section
         #contact-header
             .container
@@ -76,23 +77,25 @@ body
                             | Contact us for any questions, concerns, High-Fives or anything at all. We are friendly
                     | &#x9;&#x9;&#x9;
                     .col-md-8.col-sm-8.mt30
-                        form(action='#' method='post' role='form')
+                        form(action='send' method='post' role='form')
                             .col-md-6.col-sm-6
                                 label(for='name') NAME
                                 |                         
-                                input#name.form-control(name='name' type='text')
+                                input#name.form-control(name='contactname' type='text')
                                 |                       
                                 label(for='email') EMAIL
                                 |                         
-                                input#email.form-control(name='email' type='email')
+                                input#email.form-control(name='contactemail' type='email')
                             | &#x9;&#x9;&#x9;&#x9;&#x9;
                             .col-md-6.col-sm-6
                                 label(for='message') MESSAGE
                                 | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                                textarea#message.form-control(name='message' rows='6')
+                                textarea#message.form-control(name='contactmessage' rows='6')
                             |                     
                             .col-md-6.col-sm-6
                                 button.btn.btn-default(type='submit' name='submit') SEND
+                                p(style='margin:5px uuto; color: salmon; font-size:2rem')
+                                    |#{success}
                     | &#x9;&#x9;&#x9;
                     .col-md-4.col-sm-4.address
                         div

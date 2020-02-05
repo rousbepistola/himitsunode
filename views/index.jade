@@ -59,6 +59,8 @@ head
           | &#x9;&#x9;&#x9;
           a.navbar-brand(href='#')
             img.img-responsive(style='width: 8rem;', src='images/himitsutext.png', alt='logo of himitsu')
+            p(style='color:darkgreen; background:rgba(240,240,240,0.5); padding:0;')
+              |#{error}
         | &#x9;&#x9;
         .collapse.navbar-collapse
           ul.nav.navbar-nav.navbar-right
@@ -76,6 +78,7 @@ head
             | &#x9;&#x9;&#x9;&#x9;
             li
               a(href='/contact') CONTACT
+                       
     // home section
     #home
       .container
@@ -121,7 +124,7 @@ head
       .container
         .row
           .col-md-6.col-sm-12
-            img.img-responsive(src='images/himitsulogo.png', alt='about img', style='width: 150%; border-radius: 50%;')
+            img.img-responsive(src='images/himitsulogo.png', alt='about img', style='width: 150%; border-radius: 50%; margin: % 0')
           | &#x9;&#x9;&#x9;
           .col-md-6.col-sm-12.about-des
             h3
@@ -146,26 +149,26 @@ head
                 hr
                 | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
                 .modal-body
-                  form(action='#', role='form')
+                  form(action='/login', role='form', method='post')
                     .form-group
                       .input-group
                         span.input-group-addon
                           span.glyphicon.glyphicon-user
                         | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                        input.form-control(type='text', placeholder='Username')
+                        input.form-control(type='email', placeholder='Email', name='email')
                     | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
                     .form-group
                       .input-group
                         span.input-group-addon
                           span.glyphicon.glyphicon-lock
                         | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                        input.form-control(type='password', placeholder='Password')
+                        input.form-control(type='password', placeholder='Password', name='password')
                     | &#x9;&#x9;&#x9;
                     | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
                     .form-group.text-center
                       button.btn.btn-dark.btn-lg(type='submit') Login
                       | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
-                      a.btn.btn-link(href='#') forgot Password
+                      a.btn.btn-link(href='signup') Sign Up
     // footer section
     footer
       .container
@@ -204,3 +207,4 @@ head
     | &#x9;
     script(src='/javascripts/nivo-lightbox.min.js')
     script(src='/javascripts/custom.js')
+
