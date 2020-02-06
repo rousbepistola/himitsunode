@@ -36,7 +36,15 @@ router.get('/', function(req, res, next) {
         
 
         for(let i = 0; i < (data.secretpost).length; i++) {
-          secretspost.push(data.secretpost[i])
+
+          
+          if(secretspost == null) {
+              secretspost.push(data.secretpost[i])
+          } else {
+            secretspost.push(data.secretpost[data.secretpost.length - 1])
+          }
+
+
         }
 
         for(let i = 0; i < (data.title).length; i++) {
