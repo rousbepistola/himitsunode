@@ -71,14 +71,24 @@ head
     #portfolio
       .container
         .row
-          .col-md-12(style='height:50vh')
+          .col-md-12(style='height:60vh')
             h2 Share Your Secrets! #{username}
-            | &#x9;&#x9;&#x9;&#x9;
-            p(style='margin: 20rem 0;')
-              i
-                strong
-                  | would have a twitter or 9gag-like feed of all secrets posted. The section will be dynamic and sorted according to date.
-          |          
+            .col-md-1
+            .col-md-10
+              form(action='/secrets', role='form', method='post')
+                .form-group
+                  label(for='title') Title:
+                  textarea#title.form-control(rows='1', name='title')
+                .form-group
+                  label(for='secretpost') Post your secret:
+                  textarea#secretpost.form-control(rows='10', name='secretpost')
+                .form-group.text-center
+                  button.btn.btn-dark.btn-lg(type='submit') Share your secret
+            .col-md-1
+            .col-md-12
+              br
+              hr
+              h2 #{username}'s secrets feed
           .row
             // blog section?
             // blog section?
