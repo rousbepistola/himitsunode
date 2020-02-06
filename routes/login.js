@@ -28,7 +28,7 @@ console.log("enters post method??")
     let dbo = db.db("first1");
     let myinfo = {email: email, pass: pass};
 
-    dbo.collection("users1").findOne(myinfo, function(err, docs){
+    dbo.collection("users1").find(myinfo, function(err, docs){
         if (docs == null){
           ssn.error = "Email or Pass is incorrect";
           console.log(docs);

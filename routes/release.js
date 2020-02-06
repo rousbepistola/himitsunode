@@ -3,6 +3,7 @@ var router = express.Router();
 let MongoClient = require('mongodb').MongoClient;
 let url = "mongodb+srv://rousbepistola:3te5hrlns2gy@cluster0-1lsui.azure.mongodb.net/test?retryWrites=true&w=majority";
 let secretstitle = [];
+let secretspost = [];
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -30,12 +31,16 @@ router.get('/', function(req, res, next) {
         ssn.secrettitle = data.title;
         console.log(data.secretpost);
         console.log(data.title)
-        console.log(ssn.secretpost[0]);
-        console.log(data.title[0])
+        // console.log(ssn.secretpost[0]);
+        // console.log(data.title[0])
         
 
         for(let i = 0; i < (data.secretpost).length; i++) {
-          secretstitle.push(data.secretpost[i])
+          secretspost.push(data.secretpost[i])
+        }
+
+        for(let i = 0; i < (data.title).length; i++) {
+          secretstitle.push(data.title[i])
         }
         console.log(secretstitle);
         console.log('Yay!')
@@ -46,7 +51,7 @@ router.get('/', function(req, res, next) {
     });
 
 
-    res.render('release',{username:ssn.username, himitsutitle:secretstitle});
+    res.render('release',{username:ssn.username, himitsutitle:secretstitle, himitsupost:secretspost});
 
   } else {
     ssn.loginfirst = "please login first";
