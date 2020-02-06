@@ -18,6 +18,7 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next){
 console.log("enters post method??")
   ssn=req.session;
+  
   var email = req.body.email;
   var pass = req.body.password;
 
@@ -30,15 +31,16 @@ console.log("enters post method??")
     dbo.collection("users1").findOne(myinfo, function(err, docs){
         if (docs == null){
           ssn.error = "Email or Pass is incorrect";
-          console.log("1")
+          console.log(docs);
+          console.log("1");
           res.redirect("/");
           
         } else{
-          console.log("found data");
+          console.log("found data" + docs);
           ssn.username = docs.username ;
           ssn.email = docs.email;
-          console.log("2")
-          res.redirect('release');
+          console.log("2");
+          res.redirect("release");
         }
 
         db.close();

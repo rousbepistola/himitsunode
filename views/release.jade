@@ -71,7 +71,7 @@ head
     #portfolio
       .container
         .row
-          .col-md-12(style='height:60vh')
+          .col-md-12(style='height:auto')
             h2 Share Your Secrets! #{username}
             .col-md-1
             .col-md-10
@@ -90,37 +90,15 @@ head
               hr
               h2 #{username}'s secrets feed
           .row
-            // blog section?
-            // blog section?
-            .jumbotron.col-md-12
-              h1 Secret Post
-              | &#x9;&#x9;&#x9;
-              h6 January 24, 2019  08:54:05  @username
-              | &#x9;&#x9;&#x9;
-              p
-                | W3Schools is optimized for learning, testing, and training.yup! Examples might be simplified to improve reading and basic understanding. Tutorials, references, and examples are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content. While using this site, you agree to have read and accepted our terms of use, cookie and privacy policy. Copyright 1999-2020 by Refsnes Data. All Rights Reserved.
-                | Powered by W3.CSS.W3Schools is optimized for learning, testing, and training. Examples might be simplified to improve reading and basic understanding. Tutorials, references, and examples are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content. While using this site, you agree to have read and accepted our terms of use, cookie and privacy policy. Copyright 1999-2020 by Refsnes Data. All Rights Reserved.
-                | Powered by W3.CSS.W3Schools is optimized for learning, testing, and training. Examples might be simplified to improve reading and basic understanding. Tutorials, references, and examples are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content. While using this site, you agree to have read and accepted our terms of use, cookie and privacy policy. Copyright 1999-2020 by Refsnes Data. All Rights Reserved.
-                | Powered by W3.CSS.
-            // blog section?
-            .jumbotron.col-md-12
-              h1 Secret Post
-              | &#x9;&#x9;&#x9;
-              h6 January 24, 2019  08:54:05  @username
-              | &#x9;&#x9;&#x9;
-              p
-                | W3Schools is optimized for learning, testing, and training. Examples might be simplified to improve reading and basic understanding. Tutorials, references, and examples are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content. While using this site, you agree to have read and accepted our terms of use, cookie and privacy policy. Copyright 1999-2020 by Refsnes Data. All Rights Reserved.
-                | Powered by W3.CSS.W3Schools is optimized for learning, testing, and training. Examples might be simplified to improve reading and basic understanding. Tutorials, references, and examples are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content. While using this site, you agree to have read and accepted our terms of use, cookie and privacy policy. Copyright 1999-2020 by Refsnes Data. All Rights Reserved.
-                | Powered by W3.CSS.
-            // blog section?
-            .jumbotron.col-md-12
-              h1 Secret Post
-              | &#x9;&#x9;&#x9;
-              h6 January 24, 2019  08:54:05  @username
-              | &#x9;&#x9;&#x9;
-              p
-                | W3Schools is optimized for learning, testing, and training. Examples might be simplified to improve reading and basic understanding. Tutorials, references, and examples are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content. While using this site, you agree to have read and accepted our terms of use, cookie and privacy policy. Copyright 1999-2020 by Refsnes Data. All Rights Reserved.
-                | Powered by W3.CSS.
+            each n in secretstitle;
+              .jumbotron.col-md-12
+                h1= n
+                | &#x9;&#x9;&#x9;
+                h6 January 24, 2019  08:54:05  @username
+                | &#x9;&#x9;&#x9;
+                p
+                  | W3Schools is optimized for learning, testing, and training.yup! Examples might be simplified to improve reading and basic understanding. Tutorials, references, and examples are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content. While using this site, you agree to have read and accepted our terms of use, cookie and privacy policy. Copyright 1999-2020 by Refsnes Data. All Rights Reserved.
+
       // footer section
       footer
         .container

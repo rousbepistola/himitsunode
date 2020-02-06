@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 let MongoClient = require('mongodb').MongoClient;
 let url = "mongodb+srv://rousbepistola:3te5hrlns2gy@cluster0-1lsui.azure.mongodb.net/test?retryWrites=true&w=majority";
-let secrets;
+let secretstitle = [];
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -26,15 +26,29 @@ router.get('/', function(req, res, next) {
 
         dbo.collection("users1").findOne({secretdocument:"rousbepistola"} ,function(err, data){
         if (err) throw err;
-        console.log(data.secretpost[0]);
+        ssn.secretpost = data.secretpost;
+        ssn.secrettitle = data.title;
+        console.log(data.secretpost);
+        console.log(data.title)
+        console.log(ssn.secretpost[0]);
+        console.log(data.title[0])
+        
+
+        for(let i = 0; i < (data.secretpost).length; i++) {
+          secretstitle.push(data.secretpost[i])
+        }
+        console.log(secretstitle);
+        console.log('Yay!')
+        
         db.close();
 
     });
     });
 
 
-    res.render('release',{username:ssn.username});
-  } else{
+    res.render('release',{username:ssn.username, himitsutitle:secretstitle});
+
+  } else {
     ssn.loginfirst = "please login first";
     console.log("login first");
     res.redirect('/');
