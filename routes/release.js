@@ -16,15 +16,6 @@ router.get('/', function(req, res, next) {
       if(err) throw err;
       let dbo = db.db("first1");
 
-      // dbo.collection("users1").find({}, {projection: {_id:0, title:1, secretpost:1}}).toArray(function(err, data){
-      //   if (err) throw err;
-      //   console.log(data[37]);
-      //   console.log("new data <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
-      //   console.log(data.title);
-      //   console.log(data.secretpost)
-      //   console.log(data.length)
-      //   db.close();
-
         dbo.collection("users1").findOne({secretdocument:"rousbepistola"} ,function(err, data){
         if (err) throw err;
         ssn.secretpost = data.secretpost;
@@ -34,32 +25,27 @@ router.get('/', function(req, res, next) {
         // console.log(ssn.secretpost[0]);
         // console.log(data.title[0])
         
-
+        secretspost = [];
         for(let i = 0; i < (data.secretpost).length; i++) {
-
-          
-          if(secretspost == null) {
-              secretspost.push(data.secretpost[i])
-          } else {
-            secretspost.push(data.secretpost[data.secretpost.length - 1])
-          }
-
-
+          secretspost.push(data.secretpost[i])
         }
 
+        secretstitle = [];
         for(let i = 0; i < (data.title).length; i++) {
           secretstitle.push(data.title[i])
         }
-        console.log(secretstitle);
+
+
+        console.log(secretspost);
         console.log('Yay!')
         
         db.close();
 
     });
     });
-
-
-    res.render('release',{username:ssn.username, himitsutitle:secretstitle, himitsupost:secretspost});
+      res.render('release',{username:ssn.username, himitsutitle:secretstitle, himitsupost:secretspost});
+    
+   
 
   } else {
     ssn.loginfirst = "please login first";
@@ -86,10 +72,11 @@ router.post('/', function(req, res, next){
         if (err) throw err;
         console.log("Collection created");
         db.close();
-        res.render('release',{username:ssn.username});
+        
     });
     
 });
+res.redirect('release');
 });
 
 

@@ -16,16 +16,6 @@ console.log("enters post method for secrets.js")
     if(err) throw err;
 
     let dbo = db.db("first1");
-    // let myinfo = {title: title, secretpost: secretpost};
-
-    // dbo.collection("users1").insertOne(myinfo, function(err, data){
-    //     if (err) throw err;
-    //     console.log("Secret Kept");
-    //     db.close();
-    //     res.render('release',{username:ssn.username});
-
-    //     db.close();
-
     let myquery = {secretdocument:"rousbepistola"};
     let newvalues = {$push: {title: title, secretpost: secretpost}};
     
@@ -36,7 +26,10 @@ console.log("enters post method for secrets.js")
             
             db.close();
     }); 
-    res.render('release',{username:ssn.username});
+    setTimeout(function(){
+      res.redirect('release');
+    },1000)
+    
 });
 });
 
