@@ -47,7 +47,9 @@ router.get('/', function(req, res, next) {
     if(ssn.refreshing == 1){
       ssn.refreshing = 2;
       console.log(ssn.refreshing)
-      res.redirect('release');
+      setTimeout(function(){
+        res.redirect('release');
+      },500)
     } else {
       setTimeout(function(){
         res.render('release',{username:ssn.username, himitsutitle:secretstitle, himitsupost:secretspost});
