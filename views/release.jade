@@ -88,14 +88,18 @@ head
             .col-md-12
               br
               hr
-              h2 #{username}'s secrets feed
-          .row
-            each n in himitsupost
-              .jumbotron.col-md-12(style='background-color:lightgreen')
-                  h6 January 24, 2019  08:54:05  @username
-                  | &#x9;&#x9;&#x9;
-                  h5 #{n}
-                  | &#x9;&#x9;&#x9;
+              h4 #{username}'s secrets feed
+        .row
+          - for (var i = 0; i < himitsupost.length; ++i) {
+            return
+          .jumbotron.col-md-12(style='background-color:lightgreen;')
+            h3 #{himitsutitle[i]}
+            h5 #{himitsupost[i]}
+          - }
+
+          //- each q in himitsupost
+          //-   h5 #{q}
+
 
       // footer section
       footer
