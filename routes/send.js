@@ -27,7 +27,7 @@ router.post('/', function(req, res, next){
     let mailOptions = {
         from: 'test.audreysedgeley@gmail.com',
         to: req.body.contactemail,
-        subject: 'We received your message below: ',
+        subject: 'We received your message below and we will respond as soon as we can. Thank you! ',
         text: `${message}`
     };
     transporter.sendMail(mailOptions, function (error, info) {

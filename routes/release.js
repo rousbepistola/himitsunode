@@ -11,6 +11,7 @@ router.get('/', function(req, res, next) {
   ssn.loginfirst;
 
   if(ssn.email){
+    ssn.loginfirst = "";
 
     MongoClient.connect(url, function(err, db){
       if(err) throw err;
@@ -20,8 +21,8 @@ router.get('/', function(req, res, next) {
         if (err) throw err;
         ssn.secretpost = data.secretpost;
         ssn.secrettitle = data.title;
-        console.log(data.secretpost);
-        console.log(data.title)
+        // console.log(data.secretpost);
+        // console.log(data.title)
         // console.log(ssn.secretpost[0]);
         // console.log(data.title[0])
         
@@ -36,22 +37,33 @@ router.get('/', function(req, res, next) {
         }
 
 
-        console.log(secretspost);
+        // console.log(secretspost);
         console.log('Yay!')
         
         db.close();
 
     });
     });
-      res.render('release',{username:ssn.username, himitsutitle:secretstitle, himitsupost:secretspost});
+    if(ssn.refreshing == 1){
+      ssn.refreshing = 2;
+      console.log(ssn.refreshing)
+      res.redirect('release');
+    } else {
+      setTimeout(function(){
+        res.render('release',{username:ssn.username, himitsutitle:secretstitle, himitsupost:secretspost});
+      },600)
+     
+    }
     
-   
+
 
   } else {
     ssn.loginfirst = "please login first";
     console.log("login first");
     res.redirect('/');
   }
+
+ 
 
 });
 

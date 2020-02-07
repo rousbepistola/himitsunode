@@ -90,11 +90,12 @@ head
               hr
               h4 #{username}'s secrets feed
         .row
-          - for (var i = 0; i < himitsupost.length; ++i) {
+          - for (var i = himitsupost.length - 1; i > 39; i--) {
             return
           .jumbotron.col-md-12(style='background-color:lightgreen;')
-            h3 #{himitsutitle[i]}
-            h5 #{himitsupost[i]}
+            h2(style='color:Black;') #{himitsutitle[i]}
+            h6 @username  @time (coming soon)
+            h5(style='color:darkgreen') #{himitsupost[i]}
           - }
 
           //- each q in himitsupost

@@ -16,31 +16,34 @@ router.get('/', function(req, res, next) {
 
 // new code
 router.post('/', function(req, res, next){
-console.log("enters post method??")
+console.log("enters post method on login.js??")
+  
   ssn=req.session;
   
-  var email = req.body.email;
-  var pass = req.body.password;
+  var emailin = req.body.email;
+  var passin = req.body.password;
+
 
   MongoClient.connect(url, function (err, db) {
     if(err) throw err;
 
     let dbo = db.db("first1");
-    let myinfo = {email: email, pass: pass};
+    let myinfo = {email:emailin, password:passin};
 
-    dbo.collection("users1").find(myinfo, function(err, docs){
-        if (docs == null){
+    dbo.collection("users1").findOne(myinfo, function(err, data){
+        if (data == null){
           ssn.error = "Email or Pass is incorrect";
-          console.log(docs);
+          console.log(data);
           console.log("1");
           res.redirect("/");
           
         } else{
-          console.log("found data" + docs);
-          ssn.username = docs.username ;
-          ssn.email = docs.email;
+          console.log("found data" + data);
+          ssn.username = data.username;
+          ssn.email = data.email;
           console.log("2");
-          res.redirect("release");
+          console.log(data);
+          res.redirect("/release");
         }
 
         db.close();

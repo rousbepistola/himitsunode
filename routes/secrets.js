@@ -27,8 +27,9 @@ console.log("enters post method for secrets.js")
             db.close();
     }); 
     setTimeout(function(){
+      ssn.refreshing = 1;
       res.redirect('release');
-    },1000)
+    },200)
     
 });
 });
